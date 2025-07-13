@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Destinations</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script defer src="js/fetchData.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-900 text-white p-4 flex items-center justify-between flex-wrap">
+    <div class="text-xl font-bold">TravelX</div>
+    <div class="block lg:hidden">
+      <button id="menu-btn" class="focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div class="w-full lg:flex lg:items-center lg:w-auto hidden" id="nav-links">
+      <ul class="lg:flex space-y-2 lg:space-y-0 lg:space-x-6 mt-4 lg:mt-0">
+        <li><a href="#" class="flex items-center"><i class="fas fa-home mr-2"></i>Home</a></li>
+        <li><a href="#" class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Places</a></li>
+        <li><a href="#" class="flex items-center"><i class="fas fa-images mr-2"></i>Gallery</a></li>
+        <li><a href="#" class="flex items-center"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center" style="background-image: url('media/background.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover New Destinations</h1>
+      <p class="mb-6 text-lg md:text-xl">Adventure awaits beyond every corner</p>
+      <a href="#places" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="p-6 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Watch Our Journey</h2>
+    <video controls class="mx-auto w-full max-w-3xl" preload="metadata">
+      <source src="destinaition.mp4" type="video/mp4">
+      <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Audio Section -->
+  <section class="p-6 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Relaxing Background Music</h2>
+    <audio controls>
+      <source src="music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <!-- Fetched Content -->
+  <section class="p-6" id="fetched-section">
+    <h2 class="text-2xl font-semibold mb-4">Popular Places</h2>
+    <div id="places-container" class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+
+  <!-- Footer with SVG -->
+  <footer class="bg-blue-900 text-white p-6 text-center">
+    <div class="flex justify-center items-center space-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9a5 5 0 1110 0c0 2.38-2.14 5.97-5 9.88C9.14 14.97 7 11.38 7 9z"/>
+      </svg>
+      <p>&copy; 2025 TravelX. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      const links = document.getElementById('nav-links');
+      links.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
